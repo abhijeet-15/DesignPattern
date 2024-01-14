@@ -1,6 +1,8 @@
+package observablePattern;
+
 import java.util.ArrayList;
 
-public class WeatherStation implements IObservable{
+public class WeatherStation implements IObservable {
 
     double temperature;
     ArrayList<IObserver> observers = new ArrayList<>();

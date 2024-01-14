@@ -1,4 +1,6 @@
-public class MobileDisplay implements IObserver{
+package observablePattern;
+
+public class MobileDisplay implements IObserver {
 
     WeatherStation weatherStation;
     double currentTemperature;

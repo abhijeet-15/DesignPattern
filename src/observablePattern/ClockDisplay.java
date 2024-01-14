@@ -1,4 +1,6 @@
-public class ClockDisplay implements IObserver{
+package observablePattern;
+
+public class ClockDisplay implements IObserver {
 
     double currentTemperature;
     WeatherStation weatherStation;

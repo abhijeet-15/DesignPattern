@@ -1,3 +1,5 @@
+package observablePattern;
+
 public interface IObservable {
 
     public void add(IObserver observer);
