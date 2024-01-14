@@ -1,3 +1,12 @@
+import observablePattern.ClockDisplay;
+import observablePattern.IObserver;
+import observablePattern.MobileDisplay;
+import observablePattern.WeatherStation;
+import strategyPattern.Duck;
+import strategyPattern.GraphicallyDisplaying;
+import strategyPattern.JetFlying;
+import strategyPattern.SimpleQuacking;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,7 +20,12 @@ public class Main {
 
 
         //call notify
-        weatherStation.temperature = 12.0;
         weatherStation.notifyObservers();
+
+        Duck duck = new Duck(new JetFlying(), new SimpleQuacking(), new GraphicallyDisplaying());
+        duck.setFlyBehaviour();
+        duck.setQuackBehaviour();
+        duck.setDisplayBehaviour();
+
     }
 }
