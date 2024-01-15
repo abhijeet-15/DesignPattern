@@ -1,3 +1,4 @@
+import decortatorPattern.*;
 import observablePattern.ClockDisplay;
 import observablePattern.IObserver;
 import observablePattern.MobileDisplay;
@@ -26,6 +27,10 @@ public class Main {
         duck.setFlyBehaviour();
         duck.setQuackBehaviour();
         duck.setDisplayBehaviour();
+
+        //Pizza time
+        BasePizza basePizza = new MushroomDecorator(new PannerDecorator(new FarmHouse()));
+        System.out.println("Thank you for your order, your order amount is " + basePizza.cost());
 
     }
 }
