@@ -1,4 +1,6 @@
 import decortatorPattern.*;
+import factoryPattern.Shape;
+import factoryPattern.ShapeFactory;
 import observablePattern.ClockDisplay;
 import observablePattern.IObserver;
 import observablePattern.MobileDisplay;
@@ -15,7 +17,7 @@ public class Main {
         IObserver mObserver = new MobileDisplay(weatherStation);
         IObserver cObserver = new ClockDisplay(weatherStation);
 
-        //add the observer
+        //observer Pattern
         weatherStation.add(mObserver);
         weatherStation.add(cObserver);
 
@@ -23,14 +25,20 @@ public class Main {
         //call notify
         weatherStation.notifyObservers();
 
+        //strategy pattern
         Duck duck = new Duck(new JetFlying(), new SimpleQuacking(), new GraphicallyDisplaying());
         duck.setFlyBehaviour();
         duck.setQuackBehaviour();
         duck.setDisplayBehaviour();
 
-        //Pizza time
+        //Decorator Pattern
         BasePizza basePizza = new MushroomDecorator(new PannerDecorator(new FarmHouse()));
         System.out.println("Thank you for your order, your order amount is " + basePizza.cost());
+
+        //FactoryMethod
+        ShapeFactory shapeFactory = new ShapeFactory();
+        Shape shape = shapeFactory.getShape("Square");
+        shape.draw();
 
     }
 }
