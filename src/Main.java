@@ -1,3 +1,6 @@
+import commandPattern.LightOnCommand;
+import commandPattern.LightReceiver;
+import commandPattern.RemoteControllerInvoker;
 import decortatorPattern.*;
 import factoryPattern.Shape;
 import factoryPattern.ShapeFactory;
@@ -39,6 +42,7 @@ public class Main {
         ShapeFactory shapeFactory = new ShapeFactory();
         Shape shape = shapeFactory.getShape("Square");
         shape.draw();
+
 
     }
 }
